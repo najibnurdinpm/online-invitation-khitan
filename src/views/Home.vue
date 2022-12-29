@@ -1,5 +1,5 @@
 <template lang="">
-    <section class="relative max-w-sm w-full mx-auto h-full py-12 bg-gray-100 ">
+    <WrapSection>
         <div class="flex flex-col text-center justify-center space-y-7">
             <h4 class="text-indigo-900 text-lg font-medium">Muhammad yusuf Azmi Najib</h4>
             <h1 class="text-indigo-900 text-3xl font-bold">Syukuran Khitanan</h1>
@@ -15,19 +15,10 @@
                 <button class="bg-red-400 p-2 rounded text-gray-100">Buka undangan </button>
             </div>
         </div>
-        <ul class="fixed bottom-0 flex justify-between max-w-sm w-full h-10 bg-indigo-400">
-            <li class="flex justify-center w-full items-end h-full " >
-                    <button class=" rounded text-gray-100 w-full h-full">profile</button>
-            </li>
-            <li class="flex justify-center border border=gray-400 p-1 w-full">
-                <button class=" p-1 rounded text-gray-100 w-full">Undangan</button>
-            </li>
-            <li class="flex justify-center border border=gray-400 p-1 w-full">
-                <button class=" p-1 rounded text-gray-100 w-full">Lokasi</button>
-            </li>
-            <li class="flex justify-center border border=gray-400 p-1 w-full">
-                <button class=" p-1 rounded text-gray-100 w-full">Ucapan</button>
-            </li>
-        </ul>
-    </section>
+        <Fixedbar />
+    </WrapSection>
 </template>
+<script setup>
+    import WrapSection from '@/Layout/WrapSection.vue'
+    import Fixedbar from '@/components/Fixedbar.vue'
+</script>
