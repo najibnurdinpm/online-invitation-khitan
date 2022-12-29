@@ -10,7 +10,7 @@
             <h2 class="text-indigo-900 text-xl font-bold">Sabtu, 21 Januari 2023</h2>
             <p class="text-indigo-900 text-sm font-small">untuk </p>
             <p class="text-indigo-900 text-xl font-bold capitalize ">{{peopleInvite}}</p>
-            <p class="text-indigo-900 text-lg font-small">di {{ locationPeople }} </p>
+            <p class="text-indigo-900 text-lg font-small ">di <span class="capitalize">{{ locationPeople }}</span> </p>
         </div>
         <Fixedbar />
     </WrapSection>
@@ -35,10 +35,13 @@
          const queryName = route.query.name
          const queryLocation = route.query.location
          if(queryName) {
-             peopleInvite.value = queryName.replaceAll("-", " ")
+             localStorage.setItem("queryName", queryName.replaceAll("-", " "));
          }
+        peopleInvite.value = localStorage.getItem("queryName");
          if(queryLocation) {
-             locationPeople.value = queryLocation.replaceAll("-", " ")
+             localStorage.setItem("queryLocation", queryLocation.replaceAll("-", " "));
          }
+        locationPeople.value = localStorage.getItem("queryLocation");
+         console.log(localStorage.getItem("queryLocation"))
     })
 </script>
