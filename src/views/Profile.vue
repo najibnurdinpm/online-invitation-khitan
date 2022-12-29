@@ -3,7 +3,7 @@
         <div class="text-center space-y-10 px-5">
             <h2 class="text-indigo-900 text-3xl font-bold">Assalamu'alaikum Wr Wb</h2>
             <p class="text-gray-700 text-lg font-small">Dengan Rahmat Allah yang Maha Kuasa Insha Allah kami akan melangsungkan Syukuran Khitan</p>
-            <div class="border border-gray-400 px-10 space-y-5 py-10 hover:bg-white hover:shadow-xl">
+            <div class="border border-gray-400 px-10 space-y-10 py-10 hover:bg-white hover:shadow-xl">
                 <div class="flex justify-center">
                     <img class="w-20 h-20 flex justify-center object-cover object-center rounded-full" :src="hero" />
                 </div>
