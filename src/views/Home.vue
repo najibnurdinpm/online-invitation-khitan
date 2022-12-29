@@ -5,7 +5,7 @@
             <h4 class="text-indigo-900 text-lg font-medium">Muhammad yusuf Azmi Najib</h4>
             
             <div class="flex justify-center">
-                <img class="w-20 h-40" src="https://media.istockphoto.com/id/485456676/id/foto/lentera-vintage-maroko-terisolasi-dengan-latar-belakang-putih.jpg?s=612x612&w=0&k=20&c=uc5NY294d44qVEyrAD8MNuQdVN01vhWZntTEY4Zzplc=" />
+                <img class="w-20 h-40" :src="hero" />
             </div>
             <h2 class="text-indigo-900 text-xl font-bold">Sabtu, 21 Januari 2023</h2>
             <p class="text-indigo-900 text-sm font-small">untuk </p>
@@ -18,4 +18,5 @@
 <script setup>
     import WrapSection from '@/Layout/WrapSection.vue'
     import Fixedbar from '@/components/Fixedbar.vue'
+    import hero from '@/assets/hero.jpg'
 </script>

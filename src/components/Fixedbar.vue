@@ -9,8 +9,5 @@
         <li class="flex justify-center border border=gray-400 p-1 w-full">
             <router-link to="/invite" class=" p-1 rounded text-gray-100 w-full">Undangan</router-link>
         </li>
-        <li class="flex justify-center border border=gray-400 p-1 w-full">
-            <button class=" p-1 rounded text-gray-100 w-full">Lokasi</button>
-        </li>
     </ul>
 </template>
