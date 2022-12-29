@@ -5,7 +5,7 @@
             <h4 class="text-indigo-900 text-lg font-medium">Muhammad yusuf Azmi Najib</h4>
             
             <div class="flex justify-center">
-                <img class="w-20 h-40" :src="hero" />
+                <img class="w-40 h-50" :src="hero" />
             </div>
             <h2 class="text-indigo-900 text-xl font-bold">Sabtu, 21 Januari 2023</h2>
             <p class="text-indigo-900 text-sm font-small">untuk </p>
