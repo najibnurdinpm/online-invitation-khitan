@@ -5,7 +5,7 @@
             <p class="text-gray-700 text-lg font-small">Dengan Rahmat Allah yang Maha Kuasa Insha Allah kami akan melangsungkan Syukuran Khitan</p>
             <div class="border border-gray-400 px-10 space-y-5 py-10 hover:bg-white hover:shadow-xl">
                 <div class="flex justify-center">
-                    <img class="w-20 h-30 flex justify-center" src="https://media.istockphoto.com/id/485456676/id/foto/lentera-vintage-maroko-terisolasi-dengan-latar-belakang-putih.jpg?s=612x612&w=0&k=20&c=uc5NY294d44qVEyrAD8MNuQdVN01vhWZntTEY4Zzplc=" />
+                    <img class="w-20 h-20 flex justify-center object-cover object-center rounded-full" :src="hero" />
                 </div>
                 <h3 class="text-gray-500 text-2xl font-bold">Muhammad Yusuf Azmi Najib</h3>
                 <p class="text-indigo-900 text-xl">Putra dari<span class="flex flex-col text-gray-500 font-bold"> Nurdin Najib dan Intan Yuniarti</span></p>
@@ -19,4 +19,5 @@
 <script setup>
     import WrapSection from '@/Layout/WrapSection.vue' 
     import Fixedbar from '@/components/Fixedbar.vue'
+    import hero from '@/assets/hero.jpg'
 </script>

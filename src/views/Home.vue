@@ -9,14 +9,36 @@
             </div>
             <h2 class="text-indigo-900 text-xl font-bold">Sabtu, 21 Januari 2023</h2>
             <p class="text-indigo-900 text-sm font-small">untuk </p>
-            <p class="text-indigo-900 text-xl font-bold">Budi dan Ani</p>
-            <p class="text-indigo-900 text-sm font-small">di Jakarta </p>
+            <p class="text-indigo-900 text-xl font-bold capitalize ">{{peopleInvite}}</p>
+            <p class="text-indigo-900 text-lg font-small">di {{ locationPeople }} </p>
         </div>
         <Fixedbar />
     </WrapSection>
 </template>
 <script setup>
+    import {
+        ref,
+        onMounted
+    } from 'vue'
     import WrapSection from '@/Layout/WrapSection.vue'
     import Fixedbar from '@/components/Fixedbar.vue'
     import hero from '@/assets/hero.jpg'
+    import {
+    useRouter,
+    useRoute
+  } from 'vue-router'
+  const peopleInvite = ref('')
+  const locationPeople = ref('')
+  const router = useRouter()
+  const route = useRoute()
+     onMounted(() => {
+         const queryName = route.query.name
+         const queryLocation = route.query.location
+         if(queryName) {
+             peopleInvite.value = queryName.replaceAll("-", " ")
+         }
+         if(queryLocation) {
+             locationPeople.value = queryLocation.replaceAll("-", " ")
+         }
+    })
 </script>
