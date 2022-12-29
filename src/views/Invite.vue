@@ -1,6 +1,6 @@
 <template lang="">
     <WrapSection>
-        <div class="text-center space-y-10">
+        <div class="text-center space-y-10 px-5">
             <h2 class="text-indigo-900 text-3xl font-bold">Undangan dan Acara</h2>
             <p class="text-gray-700 text-lg font-small">Bahagia rasanya apabila anda berkenan hadir dan memberikan doa
 </p>
