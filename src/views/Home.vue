@@ -1,19 +1,39 @@
 <template lang="">
-    <WrapSection>
-        <div class="flex flex-col text-center justify-center space-y-7">
-            <h1 class="text-indigo-900 text-3xl font-bold">Syukuran Khitanan</h1>
-            <h4 class="text-indigo-900 text-lg font-medium">Muhammad yusuf Azmi Najib</h4>
-            
-            <div class="flex justify-center">
-                <img class="w-40 h-50" :src="hero" />
+    <section class="bg-[url('@/assets/bg-hero.jpg')] relative max-w-sm w-full  h-full mx-auto pt-20">
+        <div class="flex justify-between w-full h-full">
+            <div class=" flex-1  absolute top-0 left-0 w-full h-full ">
+                <div class="py-20 bg-yellow-900 px-5 flex flex-col h-[100%] w-[70%] relative">
+                    
+                    <p class="text-yellow-300 font-bold text-2xl leading-[20px]">Undangan</p>
+                    <h2 class="text-yellow-300 font-bold text-6xl">Khitan</h2>
+                    <p class="text-yellow-300 font-bold text-sm leading-[20px]">Sabtu, 21 Januari 2023</p>
+
+                    <div class="mt-12">
+                        <h3 class="text-yellow-300 font-small text-xl">Muh. yusuf Azmi Najib</h3>
+                        <p class= "text-center text-yellow-300 font-small text-xl">(Yusuf)</p>
+                    </div>
+
+
+                    <div class="absolute bottom-20 w-full left-14 h-40 z-10">
+                        <div class="text-center   h-full">
+                            <p class="text-yellow-300 font-bold mb-3">Kepada Yth</p>
+                            <div class="w-full h-full opacity-75 bg-yellow-100 rounded flex justify-center items-center">
+                                <div class="flex flex-col space-y-5 text-yellow-900 font-bold text-lg">
+                                    <p>Aunty Tahira</p>
+                                    <p>di</p>
+                                    <p>Singapore</p>
+                                </div>        
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <h2 class="text-indigo-900 text-xl font-bold">Sabtu, 21 Januari 2023</h2>
-            <p class="text-indigo-900 text-sm font-small">untuk </p>
-            <p class="text-indigo-900 text-xl font-bold capitalize ">{{peopleInvite}}</p>
-            <p class="text-indigo-900 text-lg font-small ">di <span class="capitalize">{{ locationPeople }}</span> </p>
+            <div class=" flex-1 w-full h-[520px] relative">
+                <img class="shadow-xl w-auto h-auto absolute bottom-0 -right-5" :src="hero" />
+            </div>
         </div>
-        <Fixedbar />
-    </WrapSection>
+    </section>
 </template>
 <script setup>
     import {
@@ -22,7 +42,7 @@
     } from 'vue'
     import WrapSection from '@/Layout/WrapSection.vue'
     import Fixedbar from '@/components/Fixedbar.vue'
-    import hero from '@/assets/hero.jpg'
+    import hero from '@/assets/hero.png'
     import {
     useRouter,
     useRoute
