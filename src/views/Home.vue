@@ -109,45 +109,45 @@
   const route = useRoute()
      onMounted(() => {
 
-        gsap.fromTo(
-            "#heading",
-            {
-            opacity: 0,
-            },
-            {
-            duration: 1.5,
-            opacity: 1,
-            delay: 0.5,
-            ease: "power3.inOut",
-            }
-        );
+        // gsap.fromTo(
+        //     "#heading",
+        //     {
+        //     opacity: 0,
+        //     },
+        //     {
+        //     duration: 1.5,
+        //     opacity: 1,
+        //     delay: 0.5,
+        //     ease: "power3.inOut",
+        //     }
+        // );
 
-        gsap.fromTo(
-            "#box-image-hero",
-            {
-            opacity: 0,
-            x: "20%",
-            },
-            {
-            duration: 1.5,
-            opacity: 1,
-            x: 0,
-            delay: 1,
-            ease: "power3.inOut",
-            }
-        );
-        gsap.fromTo(
-            "#label-name",
-            {
-            opacity: 0,
-            },
-            {
-            duration: 1.5,
-            opacity: 1,
-            delay: 1.5,
-            ease: "power3.inOut",
-            }
-        );
+        // gsap.fromTo(
+        //     "#box-image-hero",
+        //     {
+        //     opacity: 0,
+        //     x: "20%",
+        //     },
+        //     {
+        //     duration: 1.5,
+        //     opacity: 1,
+        //     x: 0,
+        //     delay: 1,
+        //     ease: "power3.inOut",
+        //     }
+        // );
+        // gsap.fromTo(
+        //     "#label-name",
+        //     {
+        //     opacity: 0,
+        //     },
+        //     {
+        //     duration: 1.5,
+        //     opacity: 1,
+        //     delay: 1.5,
+        //     ease: "power3.inOut",
+        //     }
+        // );
 
          const queryName = route.query.name
          const queryLocation = route.query.location
