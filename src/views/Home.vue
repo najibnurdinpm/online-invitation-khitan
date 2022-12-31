@@ -48,6 +48,17 @@
             </div>
         </div>
     </section>
+    <section class="bg-yellow-900 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
+        <div class=" text-center text-yellow-100 py-5  space-y-10">
+            <p class="font-medium text-lg">Save The Date</p>
+            <p class="font-medium text-sm">Merupakan suatu kehormatan dan kebahagian bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a kepada anak kami</p>
+            <div class="border border-yellow-100 rounded-md py-5 px-5">
+                <h2 class="font-medium text-2xl">Resepsi</h2>
+                <p class="font-medium text-sm mt-5">Sabtu, 21 Januari 2023 <span class="flex flex-col space-y-5">pkl. 12:00 Wib s/d selesai</span> di jalan Manunggal Bhakti RT/RW. 009/011, Kel. Kalisari Kec. Pasar Rebo Jakarta timur</p>
+
+            </div>
+        </div>
+    </section>
 </template>
 <script setup>
     import {
