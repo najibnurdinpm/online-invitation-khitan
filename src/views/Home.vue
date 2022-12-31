@@ -30,7 +30,7 @@
                 </div>
             </div>
              <div class=" flex-1 w-full h-[600px] relative">
-                <img class="shadow-xl w-auto h-auto absolute bottom-0 -right-5" :src="hero" />
+                <img class="shadow-xl w-auto h-auto absolute bottom-0 right-0" :src="hero" />
             </div> 
         </div>
     </section>
