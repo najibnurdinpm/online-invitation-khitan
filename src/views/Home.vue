@@ -34,6 +34,20 @@
             </div> 
         </div>
     </section>
+    <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
+        <div class=" text-center text-yellow-900 py-5  space-y-5">
+            <p class="font-medium text-lg">Assalaamu'alaikum wr, wb</p>
+            <p class="font-medium text-sm">Tanpa mengurangi rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara Syukuran khitan anak kami</p>
+            <div class="w-full flex justify-center">
+                <img class="rounded-full shadow-xl w-24 h-24 object-contain " :src="hero" />
+            </div>
+            <div class="">
+                <p class="font-medium text-lg">Muhammad Yusuf Azmi Najib</p>
+                <p class="font-medium text-sm mt-5">Putra Pertama dari Bpk. Nurdin Najib <span class="flex flex-col">&</span> Ibu Intan Yuniarti</p>
+
+            </div>
+        </div>
+    </section>
 </template>
 <script setup>
     import {
