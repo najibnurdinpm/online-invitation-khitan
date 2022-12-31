@@ -1,15 +1,15 @@
 <template lang="">
-    <section class="bg-[url('@/assets/bg-hero.jpg')] relative max-w-sm w-full  h-full mx-auto pt-20">
+    <section class="bg-[url('@/assets/bg-hero.jpg')] relative max-w-sm w-full  h-[655px] mx-auto pt-20">
         <div class="flex justify-between w-full h-full">
             <div class=" flex-1  absolute top-0 left-0 w-full h-full ">
-                <div class="py-20 bg-yellow-900 px-5 flex flex-col h-[100%] w-[70%] relative">
+                <div class="py-20 bg-yellow-900 px-7 flex flex-col h-[100%] w-[70%] relative">
                     
                     <p class="text-yellow-300 font-bold text-2xl leading-[20px]">Undangan</p>
-                    <h2 class="text-yellow-300 font-bold text-6xl">Khitan</h2>
+                    <h2 class="text-yellow-300 font-bold text-5xl">Khitanan</h2>
                     <p class="text-yellow-300 font-bold text-sm leading-[20px]">Sabtu, 21 Januari 2023</p>
 
-                    <div class="mt-12">
-                        <h3 class="text-yellow-300 font-small text-xl">Muh. yusuf Azmi Najib</h3>
+                    <div class="mt-12 max-w-xs">
+                        <h3 class="text-yellow-300 font-small text-xl">M. Yusuf Azmi Najib</h3>
                         <p class= "text-center text-yellow-300 font-small text-xl">(Yusuf)</p>
                     </div>
 
@@ -29,9 +29,9 @@
 
                 </div>
             </div>
-            <div class=" flex-1 w-full h-[520px] relative">
+             <div class=" flex-1 w-full h-full relative">
                 <img class="shadow-xl w-auto h-auto absolute bottom-0 -right-5" :src="hero" />
-            </div>
+            </div> 
         </div>
     </section>
 </template>
