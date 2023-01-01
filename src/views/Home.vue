@@ -30,7 +30,7 @@
                 </div>
             </div>
              <div id="box-image-hero" class=" flex-1 w-full h-[600px] relative">
-                <img  class="shadow-xl w-auto h-auto absolute bottom-0 right-0" :src="hero" />
+                <img   class="shadow-xl w-auto h-auto absolute bottom-0 right-0" :src="hero" />
             </div> 
         </div>
     </section>
@@ -59,7 +59,7 @@
             </div>
         </div>
     </section>
-    <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
+    <!-- <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 ">
         <div class=" text-center text-yellow-900 py-5  space-y-10">
             <p class="font-medium text-2xl">Gallery</p>
             
@@ -68,7 +68,7 @@
                 <div class="flex ">
                     <div v-for="(gallery, index) in galleryImage" :key="gallery.id" :class="[index % 2 ? 'flex  items-start' : 'flex  items-end' , '  whitespace-nowrap w-24 h-48 shrink-0' ]">
                         <div class="flex w-full h-1/2 ">
-                            <img class="rounded-full shadow-xl w-24 h-24 object-contain " :src="gallery.image" /> 
+                            <img :data-id="" class="rounded-full shadow-xl w-24 h-24 object-contain " :src="gallery.image" /> 
                         </div>
                     </div>
                 </div>
@@ -78,6 +78,18 @@
             
             
         </div>
+    </section> -->
+    <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-5">
+    <div class=" text-center text-yellow-900 py-5  space-y-10">
+        <p class="font-medium text-lg">Gallery</p>
+        <ul role="list" class="grid grid-cols-2  gap-y-8 sm:grid-cols-2  lg:grid-cols-1 ">
+            <li v-for="(gallery, index) in galleryImage" :key="gallery.id" class="relative">
+            <div class="h-80 w-full">
+                <img  :src="gallery.image" alt="" :class="[index % 2 ? 'img'+(Number(index) - 1) : 'img'+index  , 'pointer-events-none h-full w-full object-cover group-hover:opacity-75 opacity-0 img'] " />
+            </div>
+            </li>
+        </ul>
+    </div>
     </section>
 </template>
 <script setup>
@@ -90,6 +102,7 @@
     import Fixedbar from '@/components/Fixedbar.vue'
     import gsap from 'gsap'
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    import Lenis from '@studio-freight/lenis'
     import hero from '@/assets/hero.png'
     import _1 from '@/assets/gallery/1.jpg'
     import _2 from '@/assets/gallery/2.jpg'
@@ -114,7 +127,6 @@
   const locationPeople = ref('')
   const router = useRouter()
   const route = useRoute()
-
 //   const galleryImage = ref([_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15])
   const galleryImage = ref([
       {
@@ -178,8 +190,13 @@
           image:_15,
       },
   ])
-  console.log('galleryImage', galleryImage)
+
+  
+    
+
+  
      onMounted(() => {
+         
 
     gsap.registerPlugin(ScrollTrigger);
         gsap.fromTo(
@@ -239,10 +256,47 @@
              scrollTrigger: ".sec-1", 
              duration: 2,
             opacity: 1,
-            delay: 1.5,
+            delay: 2,
             ease: "power3.inOut",
              duration: 3 
         });
+
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+        });
+
+        lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
+            console.log({ scroll, limit, velocity, direction, progress })
+        })
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+        const arrEl = ['.img0', '.img2', '.img4', '.img6', '.img8', '.img10', '.img12', '.img14'];
+        arrEl.map((items)=>{
+            var tl = gsap.timeline({
+                scrollTrigger: items
+            })
+            .to(items, {
+                stagger: .5,
+                y: -10,
+                scrub:true,
+                opacity: 1,
+                duration:2,
+                ease: "power3.inOut",
+            })
+        })
+        
+        // .to(el, {
+        //     x:-100,
+        //     opacity: 0,
+        // })
+
+
     })
 
    </script>

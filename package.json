@@ -9,8 +9,10 @@
     "test:unit": "vitest --environment jsdom --root src/"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^0.2.28",
     "gsap": "^3.11.4",
     "pinia": "^2.0.28",
+    "scrollmagic": "^2.0.8",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
