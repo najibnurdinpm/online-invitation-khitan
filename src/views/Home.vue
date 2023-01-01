@@ -4,9 +4,9 @@
             <div class=" flex-1  absolute top-0 left-0 w-full h-full ">
                 <div id="heading"  class="py-20 bg-yellow-900 px-7 flex flex-col h-[100%] w-[70%] relative">
                     
-                    <p class="text-yellow-300 font-bold text-2xl leading-[20px]">Undangan</p>
+                    <p class="text-yellow-300 font-small text-2xl leading-[40px]">Undangan</p>
                     <h2 class="text-yellow-300 font-bold text-5xl">Khitanan</h2>
-                    <p class="text-yellow-300 font-bold text-sm leading-[20px]">Sabtu, 21 Januari 2023</p>
+                    <p class="text-yellow-300 font-small text-sm leading-[40px]">Sabtu, 21 Januari 2023</p>
 
                     <div class="mt-12 max-w-[90%]">
                         <h3 class="text-yellow-300 font-small text-lg">M. Yusuf Azmi Najib</h3>
@@ -36,7 +36,7 @@
     </section>
     <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
         <div class=" text-center text-yellow-900 py-5  space-y-5">
-            <p class="font-medium text-lg">Assalaamu'alaikum wr, wb</p>
+            <p class="font-medium text-lg sec-1">Assalaamu'alaikum wr, wb</p>
             <p class="font-medium text-sm">Tanpa mengurangi rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara Syukuran khitan anak kami</p>
             <div class="w-full flex justify-center">
                 <img class="rounded-full shadow-xl w-24 h-24 object-contain " :src="hero" />
@@ -62,28 +62,20 @@
     <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
         <div class=" text-center text-yellow-900 py-5  space-y-10">
             <p class="font-medium text-2xl">Gallery</p>
-            <div class="flex ">
-                <div class="flex items-start  whitespace-nowrap w-24 h-48 ">
-                    <div class="flex w-full h-1/2 ">
-                        <img class="rounded-full shadow-xl w-24 h-24 object-contain " :src="hero" /> 
+            
+            <marquee>
+            
+                <div class="flex ">
+                    <div v-for="(gallery, index) in galleryImage" :key="gallery.id" :class="[index % 2 ? 'flex  items-start' : 'flex  items-end' , '  whitespace-nowrap w-24 h-48 shrink-0' ]">
+                        <div class="flex w-full h-1/2 ">
+                            <img class="rounded-full shadow-xl w-24 h-24 object-contain " :src="gallery.image" /> 
+                        </div>
                     </div>
                 </div>
-                <div class="flex items-end  whitespace-nowrap w-24 h-48 ">
-                    <div class="flex w-full h-1/2 ">
-                        <img class="rounded-full shadow-xl w-24 h-24 object-contain " :src="hero" /> 
-                    </div>
-                </div>
-                <div class="flex items-start  whitespace-nowrap w-24 h-48 ">
-                    <div class="flex w-full h-1/2 ">
-                        <img class="rounded-full shadow-xl w-24 h-24 object-contain " :src="hero" /> 
-                    </div>
-                </div>
-                <div class="flex items-end  whitespace-nowrap w-24 h-48 ">
-                    <div class="flex w-full h-1/2 ">
-                        <img class="rounded-full shadow-xl w-24 h-24 object-contain " :src="hero" /> 
-                    </div>
-                </div>
-            </div>
+
+            </marquee>
+
+            
             
         </div>
     </section>
@@ -97,8 +89,23 @@
     import WrapSection from '@/Layout/WrapSection.vue'
     import Fixedbar from '@/components/Fixedbar.vue'
     import gsap from 'gsap'
-
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import hero from '@/assets/hero.png'
+    import _1 from '@/assets/gallery/1.jpg'
+    import _2 from '@/assets/gallery/2.jpg'
+    import _3 from '@/assets/gallery/3.jpg'
+    import _4 from '@/assets/gallery/4.jpg'
+    import _5 from '@/assets/gallery/5.jpg'
+    import _6 from '@/assets/gallery/6.jpg'
+    import _7 from '@/assets/gallery/7.jpg'
+    import _8 from '@/assets/gallery/8.jpg'
+    import _9 from '@/assets/gallery/9.jpg'
+    import _10 from '@/assets/gallery/10.jpg'
+    import _11 from '@/assets/gallery/11.jpg'
+    import _12 from '@/assets/gallery/12.jpg'
+    import _13 from '@/assets/gallery/13.jpg'
+    import _14 from '@/assets/gallery/14.jpg'
+    import _15 from '@/assets/gallery/15.jpg'
     import {
     useRouter,
     useRoute
@@ -107,8 +114,74 @@
   const locationPeople = ref('')
   const router = useRouter()
   const route = useRoute()
+
+//   const galleryImage = ref([_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15])
+  const galleryImage = ref([
+      {
+          id:0,
+          image:_1,
+      },
+      {
+          id:1,
+          image:_2,
+      },
+      {
+          id:2,
+          image:_3,
+      },
+      {
+          id:3,
+          image:_4,
+      },
+      {
+          id:4,
+          image:_5,
+      },
+      {
+          id:5,
+          image:_6,
+      },
+      {
+          id:6,
+          image:_7,
+      },
+      {
+          id:7,
+          image:_8,
+      },
+      {
+          id:8,
+          image:_9,
+      },
+      {
+          id:9,
+          image:_10,
+      },
+      {
+          id:10,
+          image:_11,
+      },
+      {
+          id:11,
+          image:_12,
+      },
+      {
+          id:12,
+          image:_13,
+      },
+      {
+          id:13,
+          image:_14,
+      },
+      {
+          id:14,
+          image:_15,
+      },
+  ])
+  console.log('galleryImage', galleryImage)
      onMounted(() => {
 
+    gsap.registerPlugin(ScrollTrigger);
         gsap.fromTo(
             "#heading",
             {
@@ -160,5 +233,16 @@
          }
         locationPeople.value = localStorage.getItem("queryLocation");
          console.log(localStorage.getItem("queryLocation"))
+
+
+         gsap.to(".sec-1", { 
+             scrollTrigger: ".sec-1", 
+             duration: 2,
+            opacity: 1,
+            delay: 1.5,
+            ease: "power3.inOut",
+             duration: 3 
+        });
     })
-</script>
+
+   </script>
