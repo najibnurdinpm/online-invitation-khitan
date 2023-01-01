@@ -31,9 +31,9 @@
                             
                                 <button @click="playAudio" type="button" :class="[buttonInvite ? 'hidden' : '' , 'absolute z-20 left-0 p-2 rounded font-bold h-full w-full  z-20 ']">Buka Undangan </button>
                                 <div :class="[buttonInvite ? '' : 'hidden' , 'flex flex-col space-y-5 text-yellow-900 font-bold text-lg ']">
-                                    <p>Aunty Tahira</p>
+                                    <p class="capitalize ">{{peopleInvite}}</p>
                                     <p>di</p>
-                                    <p>Singapore</p>
+                                    <p class="capitalize">{{locationPeople}}</p>
                                 </div>        
                             </div>
                         </div>
@@ -233,6 +233,7 @@
 
          const queryName = route.query.name
          const queryLocation = route.query.location
+         console.log('queryName', queryName)
          if(queryName) {
              localStorage.setItem("queryName", queryName.replaceAll("-", " "));
          }
