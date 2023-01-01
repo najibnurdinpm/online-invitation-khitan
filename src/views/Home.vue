@@ -1,5 +1,7 @@
 <template lang="">
+
     <section class="bg-[url('@/assets/bg-hero.jpg')] relative max-w-sm w-full  h-auto mx-auto pt-20">
+        
         <div class="flex justify-between w-full h-full">
             <div class=" flex-1  absolute top-0 left-0 w-full h-full ">
                 <div id="heading"  class="py-20 bg-yellow-900 px-7 flex flex-col h-[100%] w-[70%] relative">
@@ -35,6 +37,10 @@
         </div>
     </section>
     <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
+    <audio id="Test_Audio" controls  autoplay>
+        <source :src="backsound" type="audio/mp3">
+        Your browser does not support the audio element.
+        </audio>
         <div class=" text-center text-yellow-900 py-5  space-y-5">
             <p class="font-medium text-lg sec-1">Assalaamu'alaikum wr, wb</p>
             <p class="font-medium text-sm">Tanpa mengurangi rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara Syukuran khitan anak kami</p>
@@ -104,6 +110,7 @@
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import Lenis from '@studio-freight/lenis'
     import hero from '@/assets/hero.png'
+    import backsound from '@/assets/backsound/backsound.mp3'
     import _1 from '@/assets/gallery/1.jpg'
     import _2 from '@/assets/gallery/2.jpg'
     import _3 from '@/assets/gallery/3.jpg'
@@ -193,10 +200,12 @@
 
   
     
-
+    
   
      onMounted(() => {
          
+
+        document.getElementById("Test_Audio").play();
 
     gsap.registerPlugin(ScrollTrigger);
         gsap.fromTo(
