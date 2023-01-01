@@ -81,8 +81,8 @@
     </section> -->
     <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-5">
     <div class=" text-center text-yellow-900 py-5  space-y-10">
-        <p class="font-medium text-lg">Gallery</p>
-        <ul role="list" class="grid grid-cols-2  gap-y-8 sm:grid-cols-2  lg:grid-cols-1 ">
+        <p class="font-medium text-lg mb-[20%]">Gallery</p>
+        <ul role="list" class="grid grid-cols-1  gap-y-8 ">
             <li v-for="(gallery, index) in galleryImage" :key="gallery.id" class="relative">
             <div class="h-80 w-full">
                 <img  :src="gallery.image" alt="" :class="[index % 2 ? 'img'+(Number(index) - 1) : 'img'+index  , 'pointer-events-none h-full w-full object-cover group-hover:opacity-75 opacity-0 img'] " />
