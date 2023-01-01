@@ -1,8 +1,12 @@
 <template lang="">
-
-    <section class="bg-[url('@/assets/bg-hero.jpg')] relative max-w-sm w-full  h-auto mx-auto pt-20">
-        
+<audio class="opacity-0 absolute" controls autoplay>
+  <source :src="backsound" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+    <section class="bg-[url('@/assets/bg-hero.jpg')] relative max-w-sm w-full  h-auto mx-auto pt-20 overflow-hidden">
+          
         <div class="flex justify-between w-full h-full">
+         
             <div class=" flex-1  absolute top-0 left-0 w-full h-full ">
                 <div id="heading"  class="py-20 bg-yellow-900 px-7 flex flex-col h-[100%] w-[70%] relative">
                     
@@ -10,17 +14,23 @@
                     <h2 class="text-yellow-300 font-bold text-5xl">Khitanan</h2>
                     <p class="text-yellow-300 font-small text-sm leading-[40px]">Sabtu, 21 Januari 2023</p>
 
+                         
                     <div class="mt-12 max-w-[90%]">
-                        <h3 class="text-yellow-300 font-small text-lg">M. Yusuf Azmi Najib</h3>
-                        <p class= "text-center text-yellow-300 font-small text-lg">(Yusuf)</p>
+                        <h3 class="text-yellow-300 font-small text-sm">M. Yusuf Azmi Najib</h3>
+                        <p class= "text-center text-yellow-300 font-small text-sm">(Yusuf)</p>
                     </div>
 
+                    
 
                     <div class="absolute bottom-20 w-full left-14 h-40 z-10">
-                        <div id="label-name" class="text-center   h-full">
+                        
+                        <div id="label-name" class="text-center   h-full ">
+                        
                             <p class="text-yellow-300 font-bold mb-3">Kepada Yth</p>
                             <div class="w-full h-full opacity-75 bg-yellow-100 rounded flex justify-center items-center">
-                                <div class="flex flex-col space-y-5 text-yellow-900 font-bold text-lg">
+                            
+                                <button @click="playAudio" type="button" :class="[buttonInvite ? 'hidden' : '' , 'absolute z-20 left-0 p-2 rounded font-bold h-full w-full  z-20 ']">Buka Undangan </button>
+                                <div :class="[buttonInvite ? '' : 'hidden' , 'flex flex-col space-y-5 text-yellow-900 font-bold text-lg ']">
                                     <p>Aunty Tahira</p>
                                     <p>di</p>
                                     <p>Singapore</p>
@@ -34,13 +44,11 @@
              <div id="box-image-hero" class=" flex-1 w-full h-[600px] relative">
                 <img   class="shadow-xl w-auto h-auto absolute bottom-0 right-0" :src="hero" />
             </div> 
+            
         </div>
     </section>
     <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
-    <audio id="Test_Audio" controls  autoplay>
-        <source :src="backsound" type="audio/mp3">
-        Your browser does not support the audio element.
-        </audio>
+    
         <div class=" text-center text-yellow-900 py-5  space-y-5">
             <p class="font-medium text-lg sec-1">Assalaamu'alaikum wr, wb</p>
             <p class="font-medium text-sm">Tanpa mengurangi rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara Syukuran khitan anak kami</p>
@@ -65,39 +73,22 @@
             </div>
         </div>
     </section>
-    <!-- <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 ">
+    <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
         <div class=" text-center text-yellow-900 py-5  space-y-10">
-            <p class="font-medium text-2xl">Gallery</p>
-            
-            <marquee>
-            
-                <div class="flex ">
-                    <div v-for="(gallery, index) in galleryImage" :key="gallery.id" :class="[index % 2 ? 'flex  items-start' : 'flex  items-end' , '  whitespace-nowrap w-24 h-48 shrink-0' ]">
-                        <div class="flex w-full h-1/2 ">
-                            <img :data-id="" class="rounded-full shadow-xl w-24 h-24 object-contain " :src="gallery.image" /> 
-                        </div>
-                    </div>
+            <p  class="font-medium text-lg mb-[20%]">Gallery</p>
+            <ul role="list" class="grid grid-cols-1  gap-y-8 ">
+                <li v-for="(gallery, index) in galleryImage" :key="gallery.id" class="relative">
+                <div  class="h-80 w-full">
+                    <img  :src="gallery.image" alt="" :class="[index % 2 ? 'img'+index : 'img'+index  , 'pointer-events-none h-full w-full object-cover group-hover:opacity-75 opacity-0 img'] " />
                 </div>
-
-            </marquee>
-
-            
-            
+                </li>
+            </ul>
         </div>
-    </section> -->
-    <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-5">
-    <div class=" text-center text-yellow-900 py-5  space-y-10">
-        <p class="font-medium text-lg mb-[20%]">Gallery</p>
-        <ul role="list" class="grid grid-cols-1  gap-y-8 ">
-            <li v-for="(gallery, index) in galleryImage" :key="gallery.id" class="relative">
-            <div class="h-80 w-full">
-                <img  :src="gallery.image" alt="" :class="[index % 2 ? 'img'+(Number(index) - 1) : 'img'+index  , 'pointer-events-none h-full w-full object-cover group-hover:opacity-75 opacity-0 img'] " />
-            </div>
-            </li>
-        </ul>
-    </div>
     </section>
 </template>
+
+
+
 <script setup>
 
     import {
@@ -134,7 +125,6 @@
   const locationPeople = ref('')
   const router = useRouter()
   const route = useRoute()
-//   const galleryImage = ref([_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_11,_12,_13,_14,_15])
   const galleryImage = ref([
       {
           id:0,
@@ -198,27 +188,28 @@
       },
   ])
 
-  
+  const buttonInvite = ref(false);
+  const elAfterClickButton = ref(false);
+
     
     
   
      onMounted(() => {
-         
 
-        document.getElementById("Test_Audio").play();
-
+        // audio.play();
     gsap.registerPlugin(ScrollTrigger);
         gsap.fromTo(
-            "#heading",
+                "#heading",
             {
-            opacity: 0,
+                opacity: 0,
             },
             {
-            duration: 1.5,
-            opacity: 1,
-            delay: 0.5,
-            ease: "power3.inOut",
+                duration: 1.5,
+                opacity: 1,
+                delay: 0.5,
+                ease: "power3.inOut",
             }
+
         );
 
         gsap.fromTo(
@@ -258,17 +249,7 @@
              localStorage.setItem("queryLocation", queryLocation.replaceAll("-", " "));
          }
         locationPeople.value = localStorage.getItem("queryLocation");
-         console.log(localStorage.getItem("queryLocation"))
-
-
-         gsap.to(".sec-1", { 
-             scrollTrigger: ".sec-1", 
-             duration: 2,
-            opacity: 1,
-            delay: 2,
-            ease: "power3.inOut",
-             duration: 3 
-        });
+         
 
         const lenis = new Lenis({
             duration: 1.2,
@@ -276,7 +257,8 @@
         });
 
         lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
-            console.log({ scroll, limit, velocity, direction, progress })
+            // playAudio()
+            
         })
 
         function raf(time) {
@@ -285,27 +267,39 @@
         }
 
         requestAnimationFrame(raf)
-        const arrEl = ['.img0', '.img2', '.img4', '.img6', '.img8', '.img10', '.img12', '.img14'];
+        cek()
+        // playAudio()
+        
+        
+
+
+    })
+
+    const cek = () => {
+        const arrEl = ['.img0', '.img1','.img2', '.img3', '.img4', '.img5', '.img6', '.img7', '.img8', '.img9', '.img10', '.img11', '.img12', '.img13', '.img14'];
         arrEl.map((items)=>{
             var tl = gsap.timeline({
                 scrollTrigger: items
             })
             .to(items, {
-                stagger: .5,
-                y: -10,
-                scrub:true,
+                stagger: 1,
+                y: -50,
                 opacity: 1,
-                duration:2,
-                ease: "power3.inOut",
+                duration:.5,
+            }).to(items, {
+                stagger: 1,
+                y: 0,
+                duration:1,
             })
         })
-        
-        // .to(el, {
-        //     x:-100,
-        //     opacity: 0,
-        // })
+    }
 
-
-    })
+    
+  const playAudio = () => {
+      
+        var audio = new Audio(backsound);
+        audio.play();
+        buttonInvite.value = true
+  }
 
    </script>
