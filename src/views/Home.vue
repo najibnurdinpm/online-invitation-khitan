@@ -70,10 +70,12 @@
                
                     <h2 class="font-medium text-2xl">Resepsi</h2>
                 
-                 <div class="mb-5 mt-5">
+                 <div class="mb-7 mt-5">
                         <p class="font-medium text-sm ">Sabtu, 21 Januari 2023 <span class="flex flex-col space-y-5  ">pkl. 12:00 Wib s/d selesai</span> di jalan Manunggal Bhakti RT/RW. 009/011, Kel. Kalisari Kec. Pasar Rebo Jakarta timur</p>
                  </div>
-                <a class="bg-orange-100 text-yellow-900 text-sm font-medium px-3 py-1 rounded shadow  " href="https://goo.gl/maps/1ftcZosXbBheR4Et9" target="_blank">Google Maps</a>
+                 <div class="mb-5">
+                    <a class="bg-orange-100 text-yellow-900 text-sm font-medium px-3 py-1 rounded shadow  " href="https://goo.gl/maps/1ftcZosXbBheR4Et9" target="_blank">Google Maps</a>
+                 </div>
             </div>
         </div>
     </section>
@@ -175,34 +177,6 @@
       {
           id:7,
           image:_8,
-      },
-      {
-          id:8,
-          image:_9,
-      },
-      {
-          id:9,
-          image:_10,
-      },
-      {
-          id:10,
-          image:_11,
-      },
-      {
-          id:11,
-          image:_12,
-      },
-      {
-          id:12,
-          image:_13,
-      },
-      {
-          id:13,
-          image:_14,
-      },
-      {
-          id:14,
-          image:_15,
       },
   ])
 
