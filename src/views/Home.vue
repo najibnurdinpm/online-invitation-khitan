@@ -50,12 +50,12 @@
     <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
     
         <div class=" text-center text-yellow-900 py-5  space-y-5">
-            <p class="font-medium text-lg sec-1">Assalaamu'alaikum wr, wb</p>
-            <p class="font-medium text-sm">Tanpa mengurangi rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara Syukuran khitan anak kami</p>
-            <div class="w-full flex justify-center">
+            <p class="font-medium text-lg sec-1 sec-opening-salam opacity-0">Assalaamu'alaikum wr, wb</p>
+            <p class="font-medium text-sm sec-opening-desc opacity-0">Tanpa mengurangi rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara Syukuran khitan anak kami</p>
+            <div class="w-full flex justify-center sec-opening-image opacity-0">
                 <img class="rounded-full shadow-xl w-24 h-24 object-contain " :src="hero" />
             </div>
-            <div class="">
+            <div class="sec-opening-name opacity-0">
                 <p class="font-medium text-lg">Muhammad Yusuf Azmi Najib</p>
                 <p class="font-medium text-sm mt-5">Putra Pertama dari Bpk. Nurdin Najib <span class="flex flex-col">&</span> Ibu Intan Yuniarti</p>
 
@@ -64,27 +64,45 @@
     </section>
     <section class="bg-yellow-900 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
         <div class=" text-center text-yellow-100 py-5  space-y-10">
-            <p class="font-medium text-lg">Save The Date</p>
-            <p class="font-medium text-sm">Merupakan suatu kehormatan dan kebahagian bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a kepada anak kami</p>
-            <div class="border border-yellow-100 rounded-md py-5 px-5">
-                <h2 class="font-medium text-2xl">Resepsi</h2>
-                <p class="font-medium text-sm mt-5">Sabtu, 21 Januari 2023 <span class="flex flex-col space-y-5">pkl. 12:00 Wib s/d selesai</span> di jalan Manunggal Bhakti RT/RW. 009/011, Kel. Kalisari Kec. Pasar Rebo Jakarta timur</p>
-
+            <p class="font-medium text-lg sec-date-label opacity-0">Save The Date</p>
+            <p class="font-medium text-sm sec-date-desc opacity-0">Merupakan suatu kehormatan dan kebahagian bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a kepada anak kami</p>
+            <div class="border border-yellow-100 rounded-md py-5 px-5 sec-date-content opacity-0">
+               
+                    <h2 class="font-medium text-2xl">Resepsi</h2>
+                
+                 <div class="mb-5 mt-5">
+                        <p class="font-medium text-sm ">Sabtu, 21 Januari 2023 <span class="flex flex-col space-y-5  ">pkl. 12:00 Wib s/d selesai</span> di jalan Manunggal Bhakti RT/RW. 009/011, Kel. Kalisari Kec. Pasar Rebo Jakarta timur</p>
+                 </div>
+                <a class="bg-orange-100 text-yellow-900 text-sm font-medium px-3 py-1 rounded shadow  " href="https://goo.gl/maps/1ftcZosXbBheR4Et9" target="_blank">Google Maps</a>
             </div>
         </div>
     </section>
-    <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
-        <div class=" text-center text-yellow-900 py-5  space-y-10">
-            <p  class="font-medium text-lg mb-[20%]">Gallery</p>
-            <ul role="list" class="grid grid-cols-1  gap-y-8 ">
+    
+    <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-5 ">
+        <div class=" text-center text-yellow-900 space-y-10">
+            <p  class="font-medium text-lg ">Gallery</p>
+            <ul role="list" class="grid grid-cols-2  gap-4 ">
                 <li v-for="(gallery, index) in galleryImage" :key="gallery.id" class="relative">
-                <div  class="h-80 w-full">
-                    <img  :src="gallery.image" alt="" :class="[index % 2 ? 'img'+index : 'img'+index  , 'pointer-events-none h-full w-full object-cover group-hover:opacity-75 opacity-0 img'] " />
+                <div  class="h-40 w-full">
+                    <img  :src="gallery.image" alt="" :class="[index % 2 ? 'img'+index : 'img'+index  , 'pointer-events-none h-full w-full object-cover rounded-lg group-hover:opacity-75 opacity-0 img'] " />
                 </div>
                 </li>
             </ul>
         </div>
     </section>
+    <section class="bg-yellow-900 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
+        <div class=" text-center text-yellow-50 py-5  space-y-5">
+            <div class="w-full flex justify-center sec-close-image opacity-0">
+                <img class="rounded-full shadow-xl w-24 h-24 object-contain bg-green-50" :src="hero" />
+            </div>
+            <div class="sec-close-desc opacity-0">
+                <p class="font-medium text-lg">Muhammad Yusuf Azmi Najib</p>
+                <p class="font-medium text-sm mt-5">Atas kehadirannya kami ucapkan terima kasih</p>
+
+            </div>
+        </div>
+    </section>
+    
 </template>
 
 
@@ -268,11 +286,62 @@
 
         requestAnimationFrame(raf)
         cek()
-        // playAudio()
+        const arrSecOpenEl = ['.sec-opening-salam', '.sec-opening-desc','.sec-opening-image', '.sec-opening-name'];
+        arrSecOpenEl.map((items)=>{
+            var tl = gsap.timeline({
+                scrollTrigger: items
+            })
+            .to(items, {
+                stagger: 1,
+                y: -10,
+                opacity: 0,
+                duration:0.5,
+            }).to(items, {
+                stagger: 1,
+                opacity: 1,
+                y: 0,
+                duration:0.5,
+            })
+        })
+
+        
+        const arrSecDatenEl = ['.sec-date-label', '.sec-date-desc','.sec-date-content'];
+        arrSecDatenEl.map((items)=>{
+            var tl = gsap.timeline({
+                scrollTrigger: items
+            })
+            .to(items, {
+                stagger: 1,
+                y: -10,
+                opacity: 0,
+                duration:0.5,
+            }).to(items, {
+                stagger: 1,
+                opacity: 1,
+                y: 0,
+                duration:0.5,
+            })
+        })
         
         
-
-
+        
+        const arrSecClosenEl = ['.sec-close-image', '.sec-close-desc'];
+        arrSecClosenEl.map((items)=>{
+            var tl = gsap.timeline({
+                scrollTrigger: items
+            })
+            .to(items, {
+                stagger: 1,
+                y: -10,
+                opacity: 0,
+                duration:0.5,
+            }).to(items, {
+                stagger: 1,
+                opacity: 1,
+                y: 0,
+                duration:0.5,
+            })
+        })
     })
 
     const cek = () => {
@@ -284,12 +353,12 @@
             .to(items, {
                 stagger: 1,
                 y: -50,
-                opacity: 1,
                 duration:.5,
             }).to(items, {
                 stagger: 1,
+                opacity: 1,
                 y: 0,
-                duration:1,
+                duration:.5,
             })
         })
     }
