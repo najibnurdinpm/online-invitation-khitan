@@ -83,15 +83,24 @@
     <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-5 ">
         <div class=" text-center text-yellow-900 space-y-10">
             <p  class="font-medium text-lg ">Gallery</p>
-            <ul role="list" class="grid grid-cols-2  gap-4 ">
+            <ul role="list" class="grid grid-cols-1  gap-10 ">
                 <li v-for="(gallery, index) in galleryImage" :key="gallery.id" class="relative">
-                <div  class="h-40 w-full">
+                <div  class="h-80 w-full">
                     <img  :src="gallery.image" alt="" :class="[index % 2 ? 'img'+index : 'img'+index  , 'pointer-events-none h-full w-full object-cover rounded-lg group-hover:opacity-75 opacity-0 img'] " />
                 </div>
                 </li>
             </ul>
         </div>
-    </section>
+    </section> 
+    <!-- <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-5 ">    
+    <marquee>
+        <div class="flex  h-full items-center flex-nowrap ">
+            <div v-for="(gallery, index) in galleryImage" :key="gallery.id" class=" shrink-0 mr-5">
+                <img class="rounded shadow-xl w-60 h-60 object-cover object-center " :src="gallery.image" />     
+            </div>
+        </div>
+    </marquee>
+    </section> -->
     <section class="bg-yellow-900 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
         <div class=" text-center text-yellow-50 py-5  space-y-5">
             <div class="w-full flex justify-center sec-close-image opacity-0">
@@ -121,7 +130,7 @@
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import Lenis from '@studio-freight/lenis'
     import hero from '@/assets/hero.png'
-    import backsound from '@/assets/backsound/backsound.mp3'
+    import backsound from '@/assets/backsound/backsound1.mp3'
     import _1 from '@/assets/gallery/1.jpg'
     import _2 from '@/assets/gallery/2.jpg'
     import _3 from '@/assets/gallery/3.jpg'
@@ -177,6 +186,34 @@
       {
           id:7,
           image:_8,
+      },
+      {
+          id:8,
+          image:_9,
+      },
+      {
+          id:9,
+          image:_10,
+      },
+      {
+          id:10,
+          image:_11,
+      },
+      {
+          id:11,
+          image:_12,
+      },
+      {
+          id:12,
+          image:_13,
+      },
+      {
+          id:13,
+          image:_14,
+      },
+      {
+          id:14,
+          image:_15,
       },
   ])
 
@@ -268,14 +305,14 @@
             })
             .to(items, {
                 stagger: 1,
-                y: -10,
+                y: -50,
                 opacity: 0,
                 duration:0.5,
             }).to(items, {
                 stagger: 1,
                 opacity: 1,
                 y: 0,
-                duration:0.5,
+                duration:1,
             })
         })
 
@@ -287,14 +324,14 @@
             })
             .to(items, {
                 stagger: 1,
-                y: -10,
+                y: -50,
                 opacity: 0,
                 duration:0.5,
             }).to(items, {
                 stagger: 1,
                 opacity: 1,
                 y: 0,
-                duration:0.5,
+                duration:1,
             })
         })
         
@@ -307,14 +344,13 @@
             })
             .to(items, {
                 stagger: 1,
-                y: -10,
-                opacity: 0,
+                y: -50,
                 duration:0.5,
             }).to(items, {
                 stagger: 1,
                 opacity: 1,
                 y: 0,
-                duration:0.5,
+                duration:1,
             })
         })
     })
@@ -327,13 +363,17 @@
             })
             .to(items, {
                 stagger: 1,
-                y: -50,
-                duration:.5,
+                opacity: 1,
+                duration:1,
+                scaleY: 1.1,
+                scaleX: 1.1
             }).to(items, {
                 stagger: 1,
                 opacity: 1,
                 y: 0,
-                duration:.5,
+                duration:1,
+                scaleY: 1,
+                scaleX: 1
             })
         })
     }
