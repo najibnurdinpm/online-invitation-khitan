@@ -363,10 +363,9 @@
             })
             .to(items, {
                 stagger: 1,
-                opacity: 1,
-                duration:1,
-                scaleY: 1.1,
-                scaleX: 1.1
+                duration:0.1,
+                scaleY: 0,
+                scaleX: 0
             }).to(items, {
                 stagger: 1,
                 opacity: 1,
