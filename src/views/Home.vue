@@ -1,6 +1,6 @@
 <template lang="">
 
-  <div class=" z-10 fixed top-0  border border-green-500 p-2 w-full h-full ">
+  <div class=" z-10 fixed top-0 p-2 w-full h-full ">
     <div class="flex flex-1 justify-end p-3 max-w-sm  mx-auto h-full items-end">
     <div :class="[playOrNot ? 'block' : 'hidden']">
       <div @click="stopAudio()" :class="[buttonInvite ? 'opacity-0 z-20' : '' , 'bg-green-700 shadow-lg h-10 w-10 rounded-full group ']">
