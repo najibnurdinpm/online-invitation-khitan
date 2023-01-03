@@ -1,4 +1,24 @@
 <template lang="">
+
+  <div class=" z-10 fixed top-0  border border-green-500 p-2 w-full h-full ">
+    <div class="flex flex-1 justify-end p-3 max-w-sm  mx-auto h-full items-end">
+    <div :class="[playOrNot ? 'block' : 'hidden']">
+      <div @click="stopAudio()" :class="[buttonInvite ? 'opacity-0 z-20' : '' , 'bg-green-700 shadow-lg h-10 w-10 rounded-full group ']">
+        <button class="flex w-full justify-center h-full items-center rounded-full">
+          <i class="fa fa-pause text-white text-xl  group-hover:text-yellow-200"></i>
+        </button>
+      </div>
+    </div>
+    <div :class="[playOrNot ? 'hidden' : 'block']">
+      <div @click="playAudioAgain()" :class="[buttonInvite ? 'opacity-0 z-20' : '' , 'bg-green-700 shadow-lg h-10 w-10 rounded-full group ']">
+        <button class="flex w-full justify-center h-full items-center rounded-full">
+          <i class="fa fa-play text-white text-xl  group-hover:text-yellow-200"></i>
+        </button>
+      </div>
+    </div>
+    </div>
+  </div>
+
   <section class="bg-[url('@/assets/bg-hero.jpg')] relative max-w-sm w-full  h-auto mx-auto pt-20 overflow-hidden">
     <div class="flex justify-between w-full h-full">
       <div class=" flex-1  absolute top-0 left-0 w-full h-full ">
@@ -14,8 +34,8 @@
             <div id="label-name" class="text-center   h-full ">
               <p class="text-yellow-300 font-bold mb-3">Kepada Yth</p>
               <div class="w-full h-full opacity-75 bg-yellow-100 rounded flex justify-center items-center">
-                <button @click="playAudio" type="button" :class="[buttonInvite ? 'hidden' : '' , 'absolute z-20 left-0 p-2 rounded font-bold h-full w-full  z-20 ']">Buka Undangan </button>
-                <div :class="[buttonInvite ? '' : 'hidden' , 'flex flex-col space-y-5 text-yellow-900 font-bold text-lg ']">
+                <button @click="playAudio" type="button" :class="[buttonInvite ? '' : 'hidden' , 'absolute z-20 left-0 p-2 rounded font-bold h-full w-full  z-20 ']">Buka Undangan </button>
+                <div :class="[buttonInvite ? 'hidden' : '' , 'flex flex-col space-y-5 text-yellow-900 font-bold text-lg ']">
                   <p class="capitalize ">{{peopleInvite}}</p>
                   <p>di</p>
                   <p class="capitalize">{{locationPeople}}</p>
@@ -28,6 +48,8 @@
       <div id="box-image-hero" class=" flex-1 w-full h-[600px] relative">
         <img class="shadow-xl w-auto h-auto absolute bottom-0 right-0" :src="hero" />
       </div>
+      
+      
     </div>
   </section>
   <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
@@ -58,7 +80,6 @@
       </div>
     </div>
   </section>
-  <!--<section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-5 "><div class=" text-center text-yellow-900 space-y-10"><p  class="font-medium text-lg ">Gallery</p><ul role="list" class="grid grid-cols-1  gap-10 "><li v-for="(gallery, index) in galleryImage" :key="gallery.id" class="relative"><div  class="h-80 w-full"><img  :src="gallery.image" alt="" :class="[index % 2 ? 'img'+index : 'img'+index  , 'pointer-events-none h-full w-full object-cover rounded-lg group-hover:opacity-75 opacity-0 img'] " /></div></li></ul></div></section> -->
   <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-5 ">
     <ul role="list" class="-mb-8">
       <li v-for="(gallery, index) in galleryImage" :key="gallery.id">
@@ -175,7 +196,7 @@
       image: _8,
     },
   ])
-  const buttonInvite = ref(false);
+  const buttonInvite = ref(true);
   const elAfterClickButton = ref(false);
   onMounted(() => {
     // audio.play();
@@ -368,9 +389,25 @@
       })
     })
   }
+  
+  const playOrNot = ref(false)
+  var audio = new Audio(backsound);
   const playAudio = () => {
-    var audio = new Audio(backsound);
     audio.play();
-    buttonInvite.value = true
+    buttonInvite.value = false
+    playOrNot.value = true
+    console.log('playOrNot.value', playOrNot.value)
   }
+
+
+  const stopAudio = () => {
+    playOrNot.value = false
+    audio.pause();
+  }
+
+  const playAudioAgain = () => {
+    playOrNot.value = true
+    audio.play();
+  }
+  
 </script>
