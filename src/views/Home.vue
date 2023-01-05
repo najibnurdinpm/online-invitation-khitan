@@ -75,41 +75,28 @@
           <p class="font-medium text-sm ">Sabtu, 21 Januari 2023 <span class="flex flex-col space-y-5  ">pkl. 12:00 Wib s/d selesai</span> di jalan Manunggal Bhakti RT/RW. 009/011, Kel. Kalisari Kec. Pasar Rebo Jakarta timur </p>
         </div>
         <div class="mb-5">
-          <a class="bg-orange-100 text-yellow-900 text-sm font-medium px-3 py-1 rounded shadow  " href="https://goo.gl/maps/1ftcZosXbBheR4Et9" target="_blank">Google Maps</a>
+          <a class=" relative z-40 bg-orange-100 text-yellow-900 text-sm font-medium px-3 py-1 rounded shadow  " href="https://goo.gl/maps/1ftcZosXbBheR4Et9" target="_blank">Google Maps</a>
         </div>
       </div>
     </div>
   </section>
   <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-5 ">
-    <ul role="list" class="-mb-8">
+    <ul role="list" class="">
       <li v-for="(gallery, index) in galleryImage" :key="gallery.id">
         <div class="relative pb-8 ">
-          <span :class="[index % 2 ? 'line'+index : 'line'+index, 'absolute top-4 left-4 -ml-px h-full w-0.5 bg-yellow-500 opacity-0']" aria-hidden="true"></span>
+          <span :class="[index % 2 ? 'line'+index : 'line'+index, 'absolute top-4 left-4 -ml-px max-h-[230px] h-full w-0.5 bg-yellow-500 opacity-0']" aria-hidden="true"></span>
           <div class="relative flex space-x-3">
             <div>
               <span :class="[index % 2 ? 'bullet'+index : 'bullet'+index, 'h-8 w-8 rounded-full bg-yellow-700 flex items-center justify-center ring-8 ring-white opacity-0']">
               
               </span>
             </div>
-            <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-              <img :src="gallery.image" alt="" :class="[index % 2 ? 'img'+index : 'img'+index  , 'pointer-events-none h-full w-full object-cover rounded-lg group-hover:opacity-75 opacity-0 img'] " />
+            <div class="flex min-w-0 flex-1 justify-center space-x-4 pt-1.5">
+              <img :src="gallery.image" alt="" :class="[index % 2 ? 'img'+index : 'img'+index  , 'pointer-events-none h-60 w-3/4 object-cover rounded-lg group-hover:opacity-75 opacity-0 img'] " />
             </div>
           </div>
         </div>
       </li>
-      <li>
-      <div class="absolute -bottom-2 pb-8">
-      <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-yellow-50 " aria-hidden="true"></span>
-        <div class="relative flex space-x-3">
-          <div>
-            <span class="h-8 w-8 rounded-full bg-transparent flex items-center justify-center  ring-green-300">
-              <!-- Heroicon name: mini/check -->
-             
-            </span>
-          </div>
-        </div>
-      </div>
-    </li>
     </ul>
   </section>
   <!-- <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-5 "><marquee><div class="flex  h-full items-center flex-nowrap "><div v-for="(gallery, index) in galleryImage" :key="gallery.id" class=" shrink-0 mr-5"><img class="rounded shadow-xl w-60 h-60 object-cover object-center " :src="gallery.image" /></div></div></marquee></section> -->
@@ -223,10 +210,10 @@
       id: 14,
       image: _15,
     },
-    {
-      id: 15,
-      image: _16,
-    },
+    // {
+    //   id: 15,
+    //   image: _16,
+    // },
   ])
   const buttonInvite = ref(true);
   const elAfterClickButton = ref(false);
