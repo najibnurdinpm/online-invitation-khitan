@@ -1,6 +1,6 @@
 <template lang="">
 
-  <div class=" z-10 fixed top-0 p-2 w-full h-full ">
+    <div class=" z-10 fixed top-0 p-2 w-full h-full ">
     <div class="flex flex-1 justify-end p-3 max-w-sm  mx-auto h-full items-end">
     <div :class="[playOrNot ? 'block' : 'hidden']">
       <div @click="stopAudio()" :class="[buttonInvite ? 'opacity-0 z-20' : '' , 'bg-green-700 shadow-lg h-10 w-10 rounded-full group ']">
@@ -17,7 +17,7 @@
       </div>
     </div>
     </div>
-  </div>
+  </div>  
 
   <section class="bg-[url('@/assets/bg-hero.jpg')] relative max-w-sm w-full  h-auto mx-auto pt-20 overflow-hidden">
     <div class="flex justify-between w-full h-full">
@@ -69,14 +69,18 @@
     <div class=" text-center text-yellow-100 py-5  space-y-10">
       <p class="font-medium text-lg sec-date-label opacity-0">Save The Date</p>
       <p class="font-medium text-sm sec-date-desc opacity-0">Merupakan suatu kehormatan dan kebahagian bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a kepada anak kami</p>
-      <div class="border border-yellow-100 rounded-md py-5 px-5 sec-date-content opacity-0">
+      <div class="rounded-md py-5 sec-date-content opacity-0 relative z-20">
         <h2 class="font-medium text-2xl">Resepsi</h2>
-        <div class="mb-7 mt-5">
+        <div class="mb-16 mt-5">
           <p class="font-medium text-sm ">Sabtu, 21 Januari 2023 <span class="flex flex-col space-y-5  ">pkl. 12:00 Wib s/d selesai</span> di jalan Manunggal Bhakti RT/RW. 009/011, Kel. Kalisari Kec. Pasar Rebo Jakarta timur </p>
         </div>
-        <div class="mb-5">
-          <a class=" relative z-40 bg-orange-100 text-yellow-900 text-sm font-medium px-3 py-1 rounded shadow  " href="https://goo.gl/maps/1ftcZosXbBheR4Et9" target="_blank">Google Maps</a>
+        
+        <div class="absolute bottom-0 w-full pb-8">
+          <a class="bg-orange-100 text-yellow-900 text-sm font-medium px-3 py-1 rounded shadow  " href="https://goo.gl/maps/1ftcZosXbBheR4Et9" target="_blank">Google Maps</a>
         </div>
+        <!-- <div class="mb-5">
+          <a class="bg-orange-100 text-yellow-900 text-sm font-medium px-3 py-1 rounded shadow  " href="https://goo.gl/maps/1ftcZosXbBheR4Et9" target="_blank">Google Maps</a>
+        </div> -->
       </div>
     </div>
   </section>
