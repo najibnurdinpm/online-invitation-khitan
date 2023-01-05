@@ -162,6 +162,7 @@
   import _13 from '@/assets/gallery/13.jpg'
   import _14 from '@/assets/gallery/14.jpg'
   import _15 from '@/assets/gallery/15.jpg'
+  import _16 from '@/assets/gallery/16.jpg'
   import {
     useRouter,
     useRoute
@@ -194,11 +195,43 @@
     }, {
       id: 7,
       image: _8,
+    },{
+      id: 8,
+      image: _9,
+    },
+    {
+      id: 9,
+      image: _10,
+    },
+    {
+      id: 10,
+      image: _11,
+    },
+    {
+      id: 11,
+      image: _12,
+    },
+    {
+      id: 12,
+      image: _13,
+    },
+    {
+      id: 13,
+      image: _14,
+    },
+    {
+      id: 14,
+      image: _15,
+    },
+    {
+      id: 15,
+      image: _16,
     },
   ])
   const buttonInvite = ref(true);
   const elAfterClickButton = ref(false);
   onMounted(() => {
+    console.log()
     // audio.play();
     gsap.registerPlugin(ScrollTrigger);
     gsap.fromTo("#heading", {
