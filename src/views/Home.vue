@@ -22,46 +22,33 @@
   <section class="bg-[url('@/assets/bg-hero.jpg')] relative max-w-sm w-full mx-auto py-10 overflow-hidden">
     <div class="flex flex-1 h-full ">
       <div class="w-3/4 bg-yellow-900 px-10 pt-10 pb-80">
-           <p class="text-yellow-300 font-small text-2xl leading-[40px]">Undangan</p>
-          <h2 class="text-yellow-300 font-bold text-5xl">Khitanan</h2>
-          <p class="text-yellow-300 font-small text-sm leading-[40px]">Sabtu, 21 Januari 2023</p>
-          <div class="mt-12 max-w-[90%]">
-            <h3 class="text-yellow-300 font-small text-sm">M. Yusuf Azmi Najib</h3>
-            <p class="text-center text-yellow-300 font-small text-sm">(Yusuf)</p>
-          </div>
+        <p class="text-yellow-300 font-small text-2xl leading-[40px]">Undangan</p>
+        <h2 class="text-yellow-300 font-bold text-5xl">Khitanan</h2>
+        <p class="text-yellow-300 font-small text-sm leading-[40px]">Sabtu, 21 Januari 2023</p>
+        <div class="mt-12 max-w-[90%]">
+          <h3 class="text-yellow-300 font-small text-sm">M. Yusuf Azmi Najib</h3>
+          <p class="text-center text-yellow-300 font-small text-sm">(Yusuf)</p>
+        </div>
       </div>
     </div>
-    <!-- <div class="flex justify-between w-full ">
-      <div class=" flex-1  absolute top-0 left-0 w-full h-full ">
-        <div id="heading" class="py-20 bg-yellow-900 px-7 flex flex-col h-full w-[70%] relative">
-          <p class="text-yellow-300 font-small text-2xl leading-[40px]">Undangan</p>
-          <h2 class="text-yellow-300 font-bold text-5xl">Khitanan</h2>
-          <p class="text-yellow-300 font-small text-sm leading-[40px]">Sabtu, 21 Januari 2023</p>
-          <div class="mt-12 max-w-[90%]">
-            <h3 class="text-yellow-300 font-small text-sm">M. Yusuf Azmi Najib</h3>
-            <p class="text-center text-yellow-300 font-small text-sm">(Yusuf)</p>
-          </div>
-          <div class="absolute bottom-20 w-full left-14 h-40 z-10">
-            <div id="label-name" class="text-center   h-full ">
-              <p class="text-yellow-300 font-bold mb-3">Kepada Yth</p>
-              <div class="w-full h-full opacity-75 bg-yellow-100 rounded flex justify-center items-center">
-                <button @click="playAudio" type="button" :class="[buttonInvite ? '' : 'hidden' , 'absolute z-20 left-0 p-2 rounded font-bold h-full w-full  z-20 ']">Buka Undangan </button>
-                <div :class="[buttonInvite ? 'hidden' : '' , 'flex flex-col space-y-5 text-yellow-900 font-bold text-lg ']">
-                  <p class="capitalize ">{{peopleInvite}}</p>
-                  <p>di</p>
-                  <p class="capitalize">{{locationPeople}}</p>
-                </div>
-              </div>
-            </div>
+    <div id="box-image-hero" class=" w-3/4 absolute bottom-0 right-0 h-[450px] ">
+      <div class="relative h-full right-0 bg-[url('@/assets/hero.png')] ">
+        
+      </div>
+    </div> 
+    <div class="absolute bottom-20 w-full px-14 h-40 z-10">
+      <div id="label-name" class="text-center   h-full ">
+        <p class="text-yellow-300 font-bold mb-3">Kepada Yth</p>
+        <div class="w-full h-full opacity-75 bg-yellow-100 rounded flex justify-center items-center">
+          <button @click="playAudio" type="button" :class="[buttonInvite ? '' : 'hidden' , 'absolute z-20 left-0 p-2 rounded font-bold h-full w-full  z-20 ']">Buka Undangan </button>
+          <div :class="[buttonInvite ? 'hidden' : '' , 'flex flex-col space-y-5 text-yellow-900 font-bold text-lg ']">
+            <p class="capitalize ">{{peopleInvite}}</p>
+            <p>di</p>
+            <p class="capitalize">{{locationPeople}}</p>
           </div>
         </div>
       </div>
-       <div id="box-image-hero" class=" flex-1 w-full h-[600px] relative ">
-        <img class="shadow-xl w-auto h-auto absolute bottom-0 right-0" :src="hero" /> 
-      </div> 
-      
-      
-    </div> -->
+    </div>
   </section>
 </template>
 <script setup>
