@@ -19,7 +19,7 @@
     </div>
   </div>  
 
-  <section class="bg-[url('@/assets/bg-hero.jpg')] relative max-w-sm w-full mx-auto py-10 overflow-hidden">
+  <section class="bg-[url('@/assets/bg-hero.jpg')] relative max-w-sm w-full mx-auto py-12 overflow-hidden">
     <div class="flex flex-1 h-full ">
       <div class="w-3/4 bg-yellow-900 px-10 pt-10 pb-80">
         <p class="text-yellow-300 font-small text-2xl leading-[40px]">Undangan</p>
@@ -52,14 +52,14 @@
   </section>
 <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
   <div class=" text-center text-yellow-900 py-5  space-y-5">
-    <p class="font-medium text-2xl sec-1 sec-opening-salam opacity-0">Assalaamu'alaikum wr, wb</p>
+    <p class="font-small text-2xl sec-1 sec-opening-salam opacity-0">Assalaamu'alaikum wr, wb</p>
     <p class="font-medium text-sm sec-opening-desc opacity-0">Tanpa mengurangi rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara Syukuran khitan anak kami</p>
     <div class="w-full flex justify-center sec-opening-image opacity-0">
       <img class="rounded-full shadow-xl w-24 h-24 object-contain " :src="hero" />
     </div>
     <div class="sec-opening-name opacity-0">
       <p class="font-small text-lg">Muhammad Yusuf Azmi Najib</p>
-      <p class="font-medium text-lg mt-5">Putra Pertama dari Bpk. Nurdin Najib <span class="flex flex-col">&</span> Ibu Intan Yuniarti </p>
+      <p class="font-small text-lg mt-5">Putra Pertama dari Bpk. Nurdin Najib <span class="flex flex-col">&</span> Ibu Intan Yuniarti </p>
     </div>
   </div>
 </section>
@@ -107,8 +107,8 @@
         <img class="rounded-full shadow-xl w-24 h-24 object-contain bg-green-50" :src="hero" />
       </div>
       <div class="sec-close-desc opacity-0">
-        <p class="font-medium text-lg">Muhammad Yusuf Azmi Najib</p>
-        <p class="font-medium text-sm mt-5">Atas kehadirannya kami ucapkan terima kasih</p>
+        <p class="font-small text-lg">Muhammad Yusuf Azmi Najib</p>
+        <p class="font-small text-sm mt-5">Atas kehadirannya kami ucapkan terima kasih</p>
       </div>
     </div>
   </section>
