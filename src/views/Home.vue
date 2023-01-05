@@ -50,6 +50,78 @@
       </div>
     </div>
   </section>
+<section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
+  <div class=" text-center text-yellow-900 py-5  space-y-5">
+    <p class="font-medium text-2xl sec-1 sec-opening-salam opacity-0">Assalaamu'alaikum wr, wb</p>
+    <p class="font-medium text-sm sec-opening-desc opacity-0">Tanpa mengurangi rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara Syukuran khitan anak kami</p>
+    <div class="w-full flex justify-center sec-opening-image opacity-0">
+      <img class="rounded-full shadow-xl w-24 h-24 object-contain " :src="hero" />
+    </div>
+    <div class="sec-opening-name opacity-0">
+      <p class="font-small text-lg">Muhammad Yusuf Azmi Najib</p>
+      <p class="font-medium text-lg mt-5">Putra Pertama dari Bpk. Nurdin Najib <span class="flex flex-col">&</span> Ibu Intan Yuniarti </p>
+    </div>
+  </div>
+</section>
+ <section class="bg-yellow-900 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
+    <div class=" text-center text-yellow-100 py-5  space-y-10">
+      <p class="font-medium text-2xl sec-date-label opacity-0">Save The Date</p>
+      <p class="font-medium text-sm sec-date-desc opacity-0">Merupakan suatu kehormatan dan kebahagian bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a kepada anak kami</p>
+      <div class="rounded-md py-5 sec-date-content opacity-0 relative z-20">
+        <h2 class="font-medium text-xl">Resepsi</h2>
+        <div class="mb-16 mt-5">
+          <p class="font-medium text-sm ">Sabtu, 21 Januari 2023 <span class="flex flex-col space-y-5  ">pkl. 12:00 Wib s/d selesai</span> di jalan Manunggal Bhakti RT/RW. 009/011, Kel. Kalisari Kec. Pasar Rebo Jakarta timur </p>
+        </div>
+        
+        <div class="absolute bottom-0 w-full pb-8">
+          <a class="bg-orange-100 text-yellow-900 text-sm font-medium px-3 py-1 rounded shadow  " href="https://goo.gl/maps/1ftcZosXbBheR4Et9" target="_blank">Google Maps</a>
+        </div>
+        <!-- <div class="mb-5">
+          <a class="bg-orange-100 text-yellow-900 text-sm font-medium px-3 py-1 rounded shadow  " href="https://goo.gl/maps/1ftcZosXbBheR4Et9" target="_blank">Google Maps</a>
+        </div> -->
+      </div>
+    </div>
+  </section>
+   <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-5 ">
+    <ul role="list" class="">
+      <li v-for="(gallery, index) in galleryImage" :key="gallery.id">
+        <div class="relative pb-8 ">
+          <span :class="[index % 2 ? 'line'+index : 'line'+index, 'absolute top-4 left-4 -ml-px max-h-[230px] h-full w-0.5 bg-yellow-500 opacity-0']" aria-hidden="true"></span>
+          <div class="relative flex space-x-3">
+            <div>
+              <span :class="[index % 2 ? 'bullet'+index : 'bullet'+index, 'h-8 w-8 rounded-full bg-yellow-700 flex items-center justify-center ring-8 ring-white opacity-0']">
+              
+              </span>
+            </div>
+            <div class="flex min-w-0 flex-1 justify-center space-x-4 pt-1.5">
+              <img :src="gallery.image" alt="" :class="[index % 2 ? 'img'+index : 'img'+index  , 'pointer-events-none h-60 w-3/4 object-cover rounded-lg group-hover:opacity-75 opacity-0 img'] " />
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <section class="bg-yellow-900 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
+    <div class=" text-center text-yellow-50 py-5  space-y-5">
+      <div class="w-full flex justify-center sec-close-image opacity-0">
+        <img class="rounded-full shadow-xl w-24 h-24 object-contain bg-green-50" :src="hero" />
+      </div>
+      <div class="sec-close-desc opacity-0">
+        <p class="font-medium text-lg">Muhammad Yusuf Azmi Najib</p>
+        <p class="font-medium text-sm mt-5">Atas kehadirannya kami ucapkan terima kasih</p>
+      </div>
+    </div>
+  </section>
+   <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
+    <div class=" text-center text-yellow-900 py-5 sec-footer space-y-5 opacity-0">
+      <div class="">
+        <p class="font-bold text-lg">Website by </p>
+        <p class="font-small text-3xl">Najib Desaign</p>
+      </div>
+    </div>
+  </section>
+
+
 </template>
 <script setup>
   import {
