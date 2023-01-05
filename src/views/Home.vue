@@ -45,8 +45,8 @@
         </div>
       </div>
     </div>
-    <div id="box-image-hero" class=" w-3/4 absolute bottom-0 right-0 h-[450px] ">
-      <div class="relative h-full right-0 bg-[url('@/assets/hero.png')] ">
+    <div id="box-image-hero" class=" w-3/4 absolute bottom-0 right-0 h-[500px]">
+      <div class="relative h-full right-0 -bottom-5 bg-[url('@/assets/hero.png')] bg-no-repeat bg-center">
         
       </div>
     </div> 
