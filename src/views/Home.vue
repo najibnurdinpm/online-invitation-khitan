@@ -19,7 +19,7 @@
     </div>
   </div>  
 
-  <section class="bg-[url('@/assets/bg-hero.jpg')] relative max-w-sm w-full mx-auto py-12 overflow-hidden">
+  <section class="bg-[url('@/assets/bg-hero.jpg')] relative max-w-sm w-full mx-auto py-20 overflow-hidden">
     <div class="flex flex-1 h-full ">
       <div class="w-3/4 bg-yellow-900 px-10 pt-10 pb-80 relative">
       
