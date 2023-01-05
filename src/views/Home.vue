@@ -19,37 +19,48 @@
     </div>
   </div>  
 
-  <section class="bg-[url('@/assets/bg-hero.jpg')] relative max-w-sm w-full mx-auto py-20 overflow-hidden">
-    <div class="flex flex-1 h-full ">
-      <div class="w-3/4 bg-yellow-900 px-10 pt-10 pb-80 relative">
-      
-    <div class="absolute bottom-20 w-full px-0 h-40 z-10">
-      <div id="label-name" class="text-center   h-full ">
-        <p class="text-yellow-300 font-bold mb-3">Kepada Yth</p>
-        <div class="w-full h-full opacity-75 bg-yellow-100 rounded flex justify-center items-center">
-          <button @click="playAudio" type="button" :class="[buttonInvite ? '' : 'hidden' , 'absolute z-20 left-0 p-2 rounded font-bold h-full w-full  z-20 ']">Buka Undangan </button>
-          <div :class="[buttonInvite ? 'hidden' : '' , 'flex flex-col space-y-5 text-yellow-900 font-bold text-lg ']">
-            <p class="capitalize ">{{peopleInvite}}</p>
-            <p>di</p>
-            <p class="capitalize">{{locationPeople}}</p>
-          </div>
-        </div>
+  <section class=" relative max-w-sm w-full mx-auto   overflow-hidden">
+    <div class="absolute h-full w-full ">
+      <div class="flex flex-1 justify-end h-full ">
+        <div class="w-3/4 bg-[url('@/assets/bg-hero.jpg')] bg-cover bg-no-repeat"></div>
       </div>
     </div>
-        <p class="text-yellow-300 font-small text-sm ">Undangan</p>
-        <h2 class="text-yellow-300 font-bold text-4xl">Khitanan</h2>
-        <p class="text-yellow-300 font-small text-sm ">Sabtu, 21 Januari 2023</p>
-        <div class="mt-12 max-w-[90%]">
-          <h3 class="text-yellow-300 font-small text-sm">M. Yusuf Azmi Najib</h3>
-          <p class="text-center text-yellow-300 font-small text-sm">(Yusuf)</p>
-        </div>
-      </div>
+    <div class="py-20">
+      <div class="flex flex-1 h-full ">
+        <div id="heading" class="w-3/4 bg-yellow-900 px-10 pt-10 pb-80 relative">
+        
+          <div class="absolute bottom-20 w-full px-0 h-40 z-10">
+            <div id="label-name" class="text-center   h-full ">
+              <p class="text-yellow-300 font-bold mb-3">Kepada Yth</p>
+              <div class="w-full h-full opacity-75 bg-yellow-100 rounded flex justify-center items-center">
+                <button @click="playAudio" type="button" :class="[buttonInvite ? '' : 'hidden' , 'absolute z-20 left-0 p-2 rounded font-bold h-full w-full  z-20 ']">Buka Undangan </button>
+                <div :class="[buttonInvite ? 'hidden' : '' , 'flex flex-col space-y-5 text-yellow-900 font-bold text-lg ']">
+                  <p class="capitalize ">{{peopleInvite}}</p>
+                  <p>di</p>
+                  <p class="capitalize">{{locationPeople}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="text-yellow-300 font-small text-sm ">Undangan</p>
+          <h2 class="text-yellow-300 font-bold text-4xl">Khitanan</h2>
+          <p class="text-yellow-300 font-small text-sm ">Sabtu, 21 Januari 2023</p>
+          <div class="mt-12 max-w-[90%]">
+            <h3 class="text-yellow-300 font-small text-sm">M. Yusuf Azmi Najib</h3>
+            <p class="text-center text-yellow-300 font-small text-sm">(Yusuf)</p>
+          </div>
+      </div> 
     </div>
     <div id="box-image-hero" class=" w-3/4 absolute bottom-0 right-0 h-[500px]">
-      <div class="relative h-full right-0 -bottom-5 bg-[url('@/assets/hero.png')] bg-no-repeat bg-center">
+      <div class="relative h-full right-0  bg-[url('@/assets/hero.png')] bg-no-repeat bg-cover">
         
       </div>
     </div> 
+    </div>
+  <div class="absolute w-full h-full bg-green-300">
+
+  </div>
+    
   </section>
 <section class="bg-yellow-50 relative max-w-sm w-full  h-auto mx-auto py-10 px-10">
   <div class=" text-center text-yellow-900 py-5  space-y-5">
@@ -222,8 +233,6 @@
   const buttonInvite = ref(true);
   const elAfterClickButton = ref(false);
   onMounted(() => {
-    console.log()
-    // audio.play();
     gsap.registerPlugin(ScrollTrigger);
     gsap.fromTo("#heading", {
       opacity: 0,
